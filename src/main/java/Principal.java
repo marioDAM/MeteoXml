@@ -8,24 +8,37 @@ import java.io.IOException;
 
 public class Principal {
     public static void main(String[] args) throws IOException {
-        //Creando xml de contaminacion
+        /**
+         *         Creando xml de contaminacion
+         */
         ContaminacionService servicio = new ContaminacionService();
-        //servicio.crearArchivoContaminacion();
-        //Procesando y leyendo archivo de contaminacion
-        //servicio.procesarArchivoContaminacion();
+        servicio.crearArchivoContaminacion();
+        /**
+         *        Procesando y leyendo archivo de contaminacion
+         */
+        servicio.procesarArchivoContaminacion();
 
-        //Creando xml de temperatura
+        /**
+         *         Creando xml de temperatura
+         */
         TemperaturaService service = new TemperaturaService();
-        //service.crearArchivoTemperatura();
-        //Mostrando y procesando archivo de temperatura
-        //service.procesarArchivoTemperatura();
+        service.crearArchivoTemperatura();
 
+        /**
+         *         Mostrando y procesando archivo de temperatura
+         */
+        service.procesarArchivoTemperatura();
+
+        /**
+         * Le pasamos los argumentos
+         */
         String localidad = args[0];
         String magnitud = args[1];
+
         ConsultasContaminacion c = new ConsultasContaminacion();
-        //c.mediaContaminacion(localidad, magnitud);
+        c.consultasCont(localidad, magnitud);
         ConsultasTemperatura t = new ConsultasTemperatura();
-        t.mediaTemperatura(localidad, magnitud);
+        //t.consultasTemp(localidad, magnitud);
 
     }
 }

@@ -2,11 +2,12 @@ package consultas;
 
 import servicioCsv.primeraPractica.entidades.CalidadAireDatosMes;
 import servicioXml.ContaminacionService;
-
 import java.util.List;
 
 public class ConsultasContaminacion {
-    public void mediaContaminacion(String municipio, String magnitud) {
+
+    public void consultasCont(String municipio, String magnitud) {
+
         List<CalidadAireDatosMes> mediciones;
         CalidadAireDatosMes calidad = new CalidadAireDatosMes();
         ContaminacionService servicio = new ContaminacionService();

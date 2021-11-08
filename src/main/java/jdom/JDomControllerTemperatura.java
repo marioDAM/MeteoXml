@@ -32,6 +32,13 @@ public class JDomControllerTemperatura {
 
     }
 
+    /**
+     * Hemos decicio generar el xml usando JDom, debido a que era con el mejor nos familiarizabamos.
+     * En un principio se ve como habiamos generado atributos, pero luego al tener un complicacion decidimos das marcha atrás
+     * y y volver a generar el xml pero estos datos siendo elementos.
+     * @param calAireMeteoDatos
+     * @return Element
+     */
     public Element createElementContaminacion(CalidadAireDatosMeteoMes calAireMeteoDatos) {
         Element element = new Element("Mediciones");
         element.addContent(new Element("provincia").setText(calAireMeteoDatos.getProvincia()));

@@ -22,6 +22,7 @@ public class ContaminacionService {
     public void crearArchivoContaminacion() throws IOException {
         LectorCalidadDatosMes lcdm = new LectorCalidadDatosMes();
         JDomControllerContaminacion controller = new JDomControllerContaminacion(Settings.contaminacion);
+        //Iniciamos un modelo de datos con los elementos que rellenamos.
         controller.initData();
         lcdm.procesarCalidadDatosMes().forEach(calidadAireDatosMes -> controller.addElemento(calidadAireDatosMes));
         controller.writeXMLFile(Settings.contaminacion);
@@ -61,7 +62,10 @@ public class ContaminacionService {
                         c.setAno(Integer.parseInt(element.getElementsByTagName("año").item(0).getTextContent()));
                         c.setMes(Integer.parseInt(element.getElementsByTagName("mes").item(0).getTextContent()));
                         c.setDia(Integer.parseInt(element.getElementsByTagName("año").item(0).getTextContent()));
-
+/**
+ * En un principio te habiamos puesto los elementos de año, mes y dia como atributos, pero luego a la hora de generar el xml,
+ * nos daba un error en consola y decidimos dejarlo en elementos sin más.
+ */
 //                        c.setAno(Integer.parseInt(eElement.getAttribute("año")));
 //                        c.setMes(Integer.parseInt(eElement.getAttribute("mes")));
 //                        c.setDia(Integer.parseInt(eElement.getAttribute("dia")));

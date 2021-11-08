@@ -21,6 +21,7 @@ public class TemperaturaService {
     public void crearArchivoTemperatura() throws IOException {
         LectorCalidadDatosMeteoMes lcdm = new LectorCalidadDatosMeteoMes();
         JDomControllerTemperatura controller = new JDomControllerTemperatura(Settings.temperatura);
+        //Iniciamos un modelo de datos con los elementos que rellenamos.
         controller.initData();
         lcdm.procesarCalidadDatosMeteoMes().forEach(calidadAireDatosMeteoMes -> controller.addElement(calidadAireDatosMeteoMes));
         controller.writeXMLFile(Settings.temperatura);
@@ -120,7 +121,7 @@ public class TemperaturaService {
                 e.printStackTrace();
             }
         }
-return mediciones;
+        return mediciones;
     }
 
 }
